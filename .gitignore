@@ -1,0 +1,23 @@
+/Encontros_LP3/nbproject/private/
+/Encontros_LP3/Encontros_LP3-war/nbproject/private/
+/Encontros_LP3/Encontros_LP3-ejb/nbproject/private/
+
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!*.java
+!*.xml
+!*.json
+!*.html
+!*.xhtml
+!*.jar
+!*.pdf
+!*.properties
+!*.MF
+!*.jsp
+# etc...
+
+# ...even if they are in subdirectories
+!*/
