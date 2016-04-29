@@ -17,6 +17,7 @@
 !*.properties
 !*.MF
 !*.jsp
+!*.pdf
 # etc...
 
 # ...even if they are in subdirectories
