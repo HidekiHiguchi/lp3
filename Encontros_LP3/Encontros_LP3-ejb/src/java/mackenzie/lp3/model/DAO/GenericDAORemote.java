@@ -6,6 +6,7 @@
 package mackenzie.lp3.model.DAO;
 
 import java.util.List;
+import javax.ejb.Remote;
 import javax.persistence.EntityManager;
 
 /**
@@ -13,7 +14,8 @@ import javax.persistence.EntityManager;
  * @author whoami
  * @param <T>
  */
-public interface GenericDAO<T> {
+@Remote
+public interface GenericDAORemote<T> {
     
     public EntityManager getEM();
     public void insert(T a);
