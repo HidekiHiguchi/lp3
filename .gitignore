@@ -22,3 +22,10 @@
 
 # ...even if they are in subdirectories
 !*/
+/EncontroLibs/nbproject/private/
+/Encontros_LP3/Encontros_LP3-ejb/build/
+/Encontros_LP3/Encontros_LP3-ejb/dist/
+/Encontros_LP3/dist/
+/Encontros_LP3/build/
+/Encontros_LP3/Encontros_LP3-war/build/
+/Encontros_LP3/Encontros_LP3-war/dist/
