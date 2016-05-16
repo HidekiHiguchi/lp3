@@ -12,15 +12,12 @@ import mackenzie.lp3.model.DAO.UsuarioDAO;
 import mackenzie.lp3.model.Usuario;
 
 
-/**
- *
- * @author 1146355
- */
+@EJB
 @Stateless(mappedName = "UserBean")
 @LocalBean
 public class UserBean implements UserBeanRemote{
     
-    @EJB
+
     private UsuarioDAO userDAO;
 
 
@@ -29,9 +26,9 @@ public class UserBean implements UserBeanRemote{
 
     @Override
     public Usuario doLogin(Usuario u) {
-        if(u.getLogin() != null && !u.getLogin().getUsername().equalsIgnoreCase("") ){
+        if(u.getUsername() != null && !u.getUsername().equalsIgnoreCase("") ){
             Usuario usuario = userDAO.getUser(u);
-            if(usuario.getLogin().getPassword().equalsIgnoreCase(u.getLogin().getPassword()))
+            if(usuario.getPassword().equalsIgnoreCase(u.getPassword()))
                 return usuario;
         }
         return null;

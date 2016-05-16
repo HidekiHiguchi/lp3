@@ -5,7 +5,9 @@
         <group>
             <file>file:/home/whoami/projects/lp3/Encontros_LP3/Encontros_LP3-war/src/java/mackenzie/lp3/controller/ControllerServlet.java</file>
             <file>file:/home/whoami/projects/lp3/Encontros_LP3/Encontros_LP3-war/src/java/mackenzie/lp3/controller/UserServlet.java</file>
-            <file>file:/home/whoami/projects/lp3/Encontros_LP3/Encontros_LP3-war/web/index.html</file>
+            <file>file:/home/whoami/projects/lp3/Encontros_LP3/Encontros_LP3-war/web/home.jsp</file>
+            <file>file:/home/whoami/projects/lp3/Encontros_LP3/Encontros_LP3-war/web/login.jsp</file>
+            <file>file:/home/whoami/projects/lp3/Encontros_LP3/Encontros_LP3-war/web/includes/login.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -6,15 +6,18 @@
 package mackenzie.lp3.model.DAO;
 
 import java.util.List;
+import javax.ejb.Remote;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import mackenzie.lp3.model.Usuario;
 
 /**
  *
  * @author whoami
  */
+@Remote
 public class UsuarioDAO implements GenericDAORemote<Usuario>{
 
     @Override
@@ -53,7 +56,15 @@ public class UsuarioDAO implements GenericDAORemote<Usuario>{
 
     @Override
     public List readAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            EntityManager em = getEM();    
+            Query query = em.createQuery("SELECT c FROM Usuario c");
+            List<Usuario> list = query.getResultList();
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
@@ -62,8 +73,29 @@ public class UsuarioDAO implements GenericDAORemote<Usuario>{
     }
     
     public Usuario getUser(Usuario u) {
-        return null;
         
+        try {
+            
+            EntityManager em = getEM();    
+            Query query = em.createQuery("SELECT c FROM Usuario c WHERE c.username =:arg1");
+            query.setParameter("arg1", u.getUsername());
+            List<Usuario> list = query.getResultList();
+            if (list.size()!=1){
+                return null;
+            }
+            Usuario u2 = list.get(0);
+            if (u.getUsername().equals(u2.getUsername()) && u.getPassword().equals(u2.getPassword()) ){
+                return u;
+            }
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        
+  
+ 
     }
 
     

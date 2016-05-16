@@ -8,7 +8,6 @@ package mackenzie.lp3.controller;
 import java.util.Calendar;
 import java.util.Locale;
 import mackenzie.lp3.model.DAO.UsuarioDAO;
-import mackenzie.lp3.model.Login;
 import mackenzie.lp3.model.Usuario;
 
 /**
@@ -21,22 +20,20 @@ public class Test {
         a.setCpf("asd");
         a.setDataNascimento(Calendar.getInstance(Locale.ENGLISH));
         a.setEmail("asdas@asdas");
-        a.setEndereco("aqui cuzao");
+        a.setEndereco("LOL");
         
-        Login log = new Login();
-        log.setPassword("pass");
-        log.setTipo(1);
-        log.setUsername("Hideki");
-        a.setLogin(log);
-        
+        a.setPassword("pass");
+        a.setTipo(1);
+        a.setUsername("hideki");        
         a.setNome("Hideki Higuchi");
         a.setRg("123567");
         a.setSexo("masc");
         a.setTelefone("119811689604");
         
         UsuarioDAO dao = new UsuarioDAO();
-        dao.insert(a);
-        
+        //dao.insert(a);
+       Usuario user = dao.getUser(a);
+       System.out.println(user.getEmail());
     }
     
 }

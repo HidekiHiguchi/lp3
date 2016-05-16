@@ -23,7 +23,7 @@ import javax.persistence.Temporal;
  * @author whoami
  */
 @Entity
-@Table(name="table_user")
+@Table(name="usuario")
 public class Usuario implements Serializable{
     
     @Id
@@ -48,10 +48,15 @@ public class Usuario implements Serializable{
     private String telefone;
     @Column(nullable = false)
     private String email;
-    @Column(nullable = false)
-    private Login login;
     @ManyToMany(mappedBy = "usuarios")
     private List<Encontro> encontro;
+    @Column(nullable = false)
+    private String username;
+    @Column(nullable = false)
+    private String password;
+    @Column(nullable = false)
+    private int tipo;
+    
     public Usuario() {
     }
 
@@ -127,14 +132,6 @@ public class Usuario implements Serializable{
         this.email = email;
     }
 
-    public Login getLogin() {
-        return login;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
-    }
-
     public List<Encontro> getEncontro() {
         return encontro;
     }
@@ -142,6 +139,32 @@ public class Usuario implements Serializable{
     public void setEncontro(List<Encontro> encontro) {
         this.encontro = encontro;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+    
+    
     
     
 }

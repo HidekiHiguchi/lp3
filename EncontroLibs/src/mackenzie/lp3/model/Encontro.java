@@ -25,7 +25,7 @@ import javax.persistence.Temporal;
  * @author whoami
  */
 @Entity
-@Table(name="table_encontro")
+@Table(name="encontro")
 public class Encontro implements Serializable{
     
     @Id
